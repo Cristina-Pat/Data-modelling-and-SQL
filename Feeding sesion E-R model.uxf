@@ -1,0 +1,141 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>0</x><y>0</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;Entity Type&gt;&gt;
+Feedding Session
+--
+_Attributes_
+- Date: Dates &lt;&lt;primary key&gt;&gt;
+- Time: Times &lt;&lt;primary key&gt;&gt;
+- Location: LocCode &lt;&lt;primary key&gt;&gt;
+- Duration: TimePeriod
+- Weather: WeatherDesc
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1260</x><y>470</y><w>210</w><h>40</h></coordinates><panel_attributes>&lt;&lt;Entity Type&gt;&gt;
+Name
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>1270</x><y>380</y><w>140</w><h>60</h></coordinates><panel_attributes>Note..
+bg=light_gray</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1270</x><y>530</y><w>290</w><h>50</h></coordinates><panel_attributes>lt=-
+r1=0..n
+m1=role1
+m2=0..1
+r2=role2
+RelationshipName &gt;</panel_attributes><additional_attributes>10;20;270;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1270</x><y>610</y><w>300</w><h>50</h></coordinates><panel_attributes>lt=-
+r1=0..1
+m1=role1
+r2=role2
+m2=0..1
+&lt; RelationshipName</panel_attributes><additional_attributes>10;20;280;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1060</x><y>610</y><w>140</w><h>200</h></coordinates><panel_attributes>lt=-
+m1=role1
+r1=0..1
+r2=role2
+m2=1..m
+RelationshipName v</panel_attributes><additional_attributes>10;10;10;180</additional_attributes></element><element><id>Relation</id><coordinates><x>1200</x><y>600</y><w>140</w><h>210</h></coordinates><panel_attributes>lt=-
+r1=0..n
+m1=role1
+r2=role2
+m2=0..1
+RelationshipName ^</panel_attributes><additional_attributes>10;10;10;190</additional_attributes></element><element><id>UMLClass</id><coordinates><x>620</x><y>0</y><w>260</w><h>190</h></coordinates><panel_attributes>&lt;&lt;Entity Type&gt;&gt;
+Location
+--
+_Attributes_
+- LocationCode: LocCodes &lt;&lt;primary key&gt;&gt;
+- Name: LocNames
+- Area:AreaDomanin
+- Covered:YesNo
+- Hardstand:YesNo
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>730</x><y>240</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;Entity Type&gt;&gt;
+StaffMember
+--
+_Attributes_
+- EmployeeID: EmplIDs &lt;&lt;primary key&gt;&gt;
+- Name: PersonNames
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>500</x><y>780</y><w>210</w><h>200</h></coordinates><panel_attributes>&lt;&lt;Entity Type&gt;&gt;
+AnimalBreed
+--
+_Attributes_
+- Breed: BreedNames&lt;&lt;primary key&gt;&gt;
+- CommonName: Freetext
+- Lifespan: Lifespans
+- AverageWeight: AnimalWeights
+- AverageHeight: AnimalHeights
+- Description: FreeText
+- Notes: FreeText
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>630</x><y>580</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;Entity Type&gt;&gt;
+Feedstuff
+--
+_Attributes_
+- Feedcode: FeedCodes &lt;&lt;primary key&gt;&gt;
+- Descrioption: Freetext
+- CaloricValue: CalVal
+- Description: FreeText
+- Preparation: Freetext
+- StoreCode: StoreCodes
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>750</y><w>210</w><h>170</h></coordinates><panel_attributes>&lt;&lt;Entity Type&gt;&gt;
+Animal
+--
+_Attributes_
+- IDTagCode: Tags &lt;&lt;primary key&gt;&gt;
+- KnownAs: AnimalNames
+- DateOfBirth: Dates
+- DateAquired: Dates
+- Weight: AnimalWeights
+- Height: AnimalHeights
+- Notes: FreeText
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1000</x><y>380</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;Entity Type&gt;&gt;
+Name
+--
+_Attributes_
+- Name: &lt;description&gt; 
+--
+_Constraints_
+- 1: &lt;description&gt;
+- 2: &lt;description&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>20</y><w>440</w><h>50</h></coordinates><panel_attributes>lt=-
+r1=0..m
+m1=is place for
+m2=1..1
+r2=occurs at
+OccursAt &gt;</panel_attributes><additional_attributes>10;20;420;20</additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>150</y><w>210</w><h>170</h></coordinates><panel_attributes>lt=-
+r1=1..1
+m1=
+m2=1..m
+r2=
+Serves &gt;</panel_attributes><additional_attributes>10;20;170;20;170;150</additional_attributes></element><element><id>Relation</id><coordinates><x>80</x><y>550</y><w>100</w><h>220</h></coordinates><panel_attributes>lt=-
+m1=
+r1=0..m
+r2=
+m2=1..1
+Attends  to ^</panel_attributes><additional_attributes>10;10;10;200</additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>80</y><w>550</w><h>220</h></coordinates><panel_attributes>lt=-
+r1=0..m
+m1=supervised
+r2=is supervised by
+m2=1..1
+&lt; Supervises</panel_attributes><additional_attributes>10;20;530;200</additional_attributes></element><element><id>UMLClass</id><coordinates><x>270</x><y>300</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;Intersection Entity Type&gt;&gt;
+Serving
+--
+_Attributes_
+- Date: Dates &lt;&lt;primary key&gt;&gt;
+- Times: Times &lt;&lt;primary key&gt;&gt;
+- Location: LocNames &lt;&lt;primary key&gt;&gt;
+- Feedcode: Feedcodes &lt;&lt;primary key&gt;
+- Quantity: FeedQuantities
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>480</y><w>290</w><h>200</h></coordinates><panel_attributes>lt=-
+r1=0..m
+m1=
+m2=1..1
+r2=
+Contains &gt;</panel_attributes><additional_attributes>10;10;10;170;270;170</additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>800</y><w>320</w><h>50</h></coordinates><panel_attributes>lt=-
+r1=0..m
+m1=describes
+r2=is part of
+m2=1..1
+&lt; Clasifies</panel_attributes><additional_attributes>10;20;300;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>390</y><w>210</w><h>170</h></coordinates><panel_attributes>&lt;&lt;Intersection Entity Type&gt;&gt;
+Attendance
+--
+_Attributes_
+- IDTagCode: Tags &lt;&lt;primary key&gt;&gt;
+- Date: Dates &lt;&lt;primary key&gt;&gt;
+- Time: Times &lt;&lt;primary key&gt;&gt;
+- Location: LocCode &lt;&lt;primary key&gt;&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>70</x><y>180</y><w>70</w><h>230</h></coordinates><panel_attributes>lt=-
+m1=
+r1=1..1
+r2=
+m2=1..m
+Has v</panel_attributes><additional_attributes>10;10;10;210</additional_attributes></element></diagram>
