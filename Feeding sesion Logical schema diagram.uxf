@@ -1,0 +1,195 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;UMLClass&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;630&lt;/x&gt;&lt;y&gt;720&lt;/y&gt;&lt;w&gt;210&lt;/w&gt;&lt;h&gt;190&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;&amp;lt;&amp;lt;Entity Type&amp;gt;&amp;gt;
+Feedstuff
+--
+_Attributes_
+- Feedcode: FeedCodes &amp;lt;&amp;lt;primary key&amp;gt;&amp;gt;
+- Descrioption: Freetext
+- CaloricValue: CalVal
+- Description: FreeText
+- Preparation: Freetext
+- StoreCode: StoreCodes
+&lt;/panel_attributes&gt;&lt;additional_attributes&gt;&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;Relation&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;1150&lt;/x&gt;&lt;y&gt;410&lt;/y&gt;&lt;w&gt;30&lt;/w&gt;&lt;h&gt;100&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;&lt;/panel_attributes&gt;&lt;additional_attributes&gt;10;80;10;10&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;Relation&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;1270&lt;/x&gt;&lt;y&gt;210&lt;/y&gt;&lt;w&gt;160&lt;/w&gt;&lt;h&gt;40&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;&lt;/panel_attributes&gt;&lt;additional_attributes&gt;10;20;140;20&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;UMLClass&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;149&lt;/x&gt;&lt;y&gt;530&lt;/y&gt;&lt;w&gt;210&lt;/w&gt;&lt;h&gt;170&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;&amp;lt;&amp;lt;Intersection Entity Type&amp;gt;&amp;gt;
+Attendance
+--
+_Attributes_
+- IDTagCode: Tags &amp;lt;&amp;lt;primary key&amp;gt;&amp;gt;
+- Date: Dates &amp;lt;&amp;lt;primary key&amp;gt;&amp;gt;
+- Time: Times &amp;lt;&amp;lt;primary key&amp;gt;&amp;gt;
+- Location: LocCode &amp;lt;&amp;lt;primary key&amp;gt;&amp;gt;
+&lt;/panel_attributes&gt;&lt;additional_attributes&gt;&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;Space for diagram notes</help_text><element><id>UMLNote</id><coordinates><x>112</x><y>0</y><w>220</w><h>60</h></coordinates><panel_attributes>Logical schema diagram
+Feeding Sesion
+bg=light_gray
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>352</x><y>200</y><w>80</w><h>40</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;60;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>72</x><y>140</y><w>290</w><h>320</h></coordinates><panel_attributes>&lt;&lt;Relation&gt;&gt;
+Feedding Session
+--
+_Attributes_
+- Date: Dates &lt;&lt;primary key&gt;&gt;
+- Time: Times &lt;&lt;primary key&gt;&gt;
+- Location: LocCode &lt;&lt;primary key&gt;&gt;
+- Duration: TimePeriod
+- Weather: WeatherDesc
+--
+_Constrains_
+OccursAt, mandatory participation: 
+all values of (Date, Time, LocationCode) 
+must appears in  OccursAt
+Feeds, mandatory participation: all  values of 
+(Date, Time, LocationCode)  must appears in Feeds
+Serves, mandatory participation: all values of 
+(Date, Time, LocationCode)  must appears in Serves
+Supervised, mandatory participation: all values of 
+(Date, Time, LocationCode) must appears in 
+Supervised
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>752</x><y>140</y><w>260</w><h>150</h></coordinates><panel_attributes>&lt;&lt;Relation&gt;&gt;
+Location
+--
+_Attributes_
+- LocationCode: LocCodes &lt;&lt;primary key&gt;&gt;
+- Name: LocNames
+- Area:AreaDomanin
+- Covered:YesNo
+- Hardstand:YesNo
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>412</x><y>140</y><w>230</w><h>200</h></coordinates><panel_attributes>&lt;&lt;Relation&gt;&gt;
+OccursAt
+--
+_Attributes_
+- LocationCode: LocCodes &lt;&lt;primary key&gt;&gt;
+- Date: Dates &lt;&lt;primary key&gt;&gt;
+- Time: Times &lt;&lt;primary key&gt;&gt;
+--
+_Foreign Keys_
+Name(OccursAt) Location Code
+references Location
+Name(OccursAt) (Date, Time, 
+LocationCode) references
+Feeding Session
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>632</x><y>200</y><w>140</w><h>40</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;120;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>73</x><y>640</y><w>210</w><h>210</h></coordinates><panel_attributes>&lt;&lt;Relation&gt;&gt;
+Feeds
+--
+_Attributes_
+- IDTagCode: Tags &lt;&lt;primary key&gt;&gt;
+- Date: Dates &lt;&lt;primary key&gt;&gt;
+- Time: Times &lt;&lt;primary key&gt;&gt;
+- Location: LocCode &lt;&lt;primary key&gt;&gt;
+--
+_Foreingn Keys_
+Name(Feed) (Date, Time, 
+LocationsCode) references Feeddin 
+Session
+Name(Feed) IDTagCode references 
+Animal</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>152</x><y>450</y><w>30</w><h>210</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;190;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>72</x><y>930</y><w>210</w><h>230</h></coordinates><panel_attributes>&lt;&lt;Relation&gt;&gt;
+Animal
+--
+_Attributes_
+- IDTagCode: Tags &lt;&lt;primary key&gt;&gt;
+- KnownAs: AnimalNames
+- DateOfBirth: Dates
+- DateAquired: Dates
+- Weight: AnimalWeights
+- Height: AnimalHeights
+- Notes: FreeText
+--
+_Constrains_
+Clasifies, mandatory participation: all 
+values of IDTagCode must appears 
+in Clasification</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>152</x><y>840</y><w>30</w><h>110</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1262</x><y>388</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;Relation&gt;
+Feedstuff
+--
+_Attributes_
+- Feedcode: FeedCodes &lt;&lt;primary key&gt;&gt;
+- Descrioption: Freetext
+- CaloricValue: CalVal
+- Description: FreeText
+- Preparation: Freetext
+- StoreCode: StoreCodes
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>412</x><y>388</y><w>230</w><h>230</h></coordinates><panel_attributes>&lt;&lt;Relation&gt;
+Serves
+--
+_Attributes_
+- Feedcode: FeedCodes &lt;&lt;primary key&gt;&gt;
+- Date: Dates &lt;&lt;primary key&gt;&gt;
+- Time: Times &lt;&lt;primary key&gt;&gt;
+- Location: LocCode &lt;&lt;primary key&gt;&gt;
+- Feedcode: Feedcodes &lt;&lt;primary key&gt;
+--
+_Foreing Keys_
+Names(Serves) (Date, Time, 
+LocationCode) references
+Feeding Session
+Names(Serves) FeedCode references
+Serving</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>352</x><y>370</y><w>80</w><h>110</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;60;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>752</x><y>660</y><w>210</w><h>100</h></coordinates><panel_attributes>&lt;&lt;Relation&gt;&gt;
+StaffMember
+--
+_Attributes_
+- EmployeeID: EmplIDs &lt;&lt;primary key&gt;&gt;
+- Name: PersonNames
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>412</x><y>660</y><w>230</w><h>210</h></coordinates><panel_attributes>&lt;&lt;Relation&gt;&gt;
+Supervised
+--
+_Attributes_
+- EmployeeID: EmplIDs &lt;&lt;primary key&gt;&gt;
+- Date: Dates &lt;&lt;primary key&gt;&gt;
+- Time: Times &lt;&lt;primary key&gt;&gt;
+- Location: LocCode &lt;&lt;primary key&gt;&gt;
+--
+_Foreing Keys_
+Names(Supervised) (Date, Time, 
+LocationCode) references
+Feeding Session
+Names(Supervised) EmployeeID
+references StaffMember</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>450</y><w>190</w><h>250</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;170;230</additional_attributes></element><element><id>Relation</id><coordinates><x>632</x><y>720</y><w>140</w><h>40</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;120;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>772</x><y>930</y><w>210</w><h>170</h></coordinates><panel_attributes>&lt;&lt;Relation&gt;&gt;
+AnimalBreed
+--
+_Attributes_
+- Breed: BreedNames&lt;&lt;primary key&gt;&gt;
+- CommonName: Freetext
+- Lifespan: Lifespans
+- AverageWeight: AnimalWeights
+- AverageHeight: AnimalHeights
+- Description: FreeText
+- Notes: FreeText
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>432</x><y>930</y><w>210</w><h>200</h></coordinates><panel_attributes>&lt;&lt;Relation&gt;&gt;
+Clasifies
+--
+_Attributes_
+- Breed: BreedNames&lt;&lt;primary key&gt;&gt;
+- IDTagCode: Tags &lt;&lt;primary key&gt;&gt;
+
+--
+_Foreing Keys_
+Names(Clasifies) Breed references
+AnimalBreed
+Names(Clasifies) IDTagCode
+references Animal</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>272</x><y>1030</y><w>180</w><h>40</h></coordinates><panel_attributes></panel_attributes><additional_attributes>160;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>632</x><y>1030</y><w>160</w><h>40</h></coordinates><panel_attributes></panel_attributes><additional_attributes>140;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>732</x><y>390</y><w>210</w><h>230</h></coordinates><panel_attributes>&lt;&lt;Relation&gt;&gt;
+Serving
+--
+_Attributes_
+- Date: Dates &lt;&lt;primary key&gt;&gt;
+- Time: Times &lt;&lt;primary key&gt;&gt;
+- Location: LocNames &lt;&lt;primary key&gt;&gt;
+- Feedcode: Feedcodes &lt;&lt;primary key&gt;
+--
+_Constrains_
+Serves, mandatory participation: all 
+values of (Date, Time, Location, 
+FeedCode) must appears  in Serves
+Contains, mandatory participation: all 
+values of  (Date, Time, Location, 
+FeedCode) must appears  in Contains</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>632</x><y>470</y><w>120</w><h>40</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;100;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1002</x><y>388</y><w>210</w><h>220</h></coordinates><panel_attributes>&lt;&lt;Relation&gt;
+Contains
+--
+_Attributes_
+- Date: Dates &lt;&lt;primary key&gt;&gt;
+- Time: Times &lt;&lt;primary key&gt;&gt;
+- Location: LocNames &lt;&lt;primary key&gt;&gt;
+- Feedcode: Feedcodes &lt;&lt;primary key&gt;
+--
+_Foreing Keys_
+Names(Contains) (Date, Time, 
+LocationCode) references
+Serving
+Names(Contains) FeedCode references
+FeedStuff
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>932</x><y>470</y><w>90</w><h>40</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;70;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1202</x><y>460</y><w>80</w><h>40</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;60;20</additional_attributes></element></diagram>
